@@ -1,4 +1,4 @@
-"""The tests for the Light Switch platform."""
+"""Tests for the Switch as X Light platform."""
 import pytest
 
 from homeassistant.components.light import (
@@ -107,8 +107,8 @@ async def test_switch_service_calls(hass):
 
 
 @pytest.mark.parametrize("target_domain", ("light",))
-async def test_config_entry(hass: HomeAssistant, target_domain):
-    """Test light switch setup from config entry."""
+async def test_config_entry_entity_id(hass: HomeAssistant, target_domain):
+    """Test light switch setup from config entry with entity id."""
     config_entry = MockConfigEntry(
         data={},
         domain=DOMAIN,
